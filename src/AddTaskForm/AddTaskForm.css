@@ -1,0 +1,33 @@
+.addInput{
+    width: 83%;
+    padding: 10px 2px;
+    background: bisque;
+    border: none;
+    border-radius: 5px;
+    margin: 17px 20px;
+}
+
+.addBtn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #a5beef;
+    margin-left: 5px;
+}
+
+
+.taskCard input {
+    width: 80%;
+    border: 2px solid #818185;
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin: 17px 20px;
+}
+
+.deleteBtn{
+    background: #232222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 13px;
+}
