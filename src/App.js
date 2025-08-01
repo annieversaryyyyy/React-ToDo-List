@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import AddTaskForm from "./AddTaskForm/AddTaskForm";
+import AddTaskForm from "./components/AddTaskForm/AddTaskForm";
 import { nanoid } from "nanoid";
-import Task from "./Task/Task";
+import Task from "./components/Task/Task";
+import ButtonForm from "./components/ButtonForm/ButtonForm";
 
 const App = () => {
   const [newTask, setNewTask] = useState("");
   const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const addTask = (e) => {
     e.preventDefault();
@@ -34,7 +36,11 @@ const App = () => {
     );
   };
 
-  console.log(tasks);
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "completed") return task.completed;
+    if (filter === "active") return !task.completed;
+    return true;
+  });
 
   return (
     <>
@@ -43,8 +49,12 @@ const App = () => {
         task={newTask}
         onTextChange={(e) => setNewTask(e.target.value)}
       />
-
-      <Task task={tasks} onDelete={deleteTask} toggleTask={toggleTask} />
+      <ButtonForm onFilterChange={setFilter} activeFilter={filter}  />
+      <Task
+        task={filteredTasks}
+        onDelete={deleteTask}
+        toggleTask={toggleTask}
+      />
     </>
   );
 };
