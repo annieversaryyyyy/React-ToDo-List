@@ -26,6 +26,16 @@ const App = () => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
+  const toggleTask = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
+  };
+
+  console.log(tasks);
+
   return (
     <>
       <AddTaskForm
@@ -34,7 +44,7 @@ const App = () => {
         onTextChange={(e) => setNewTask(e.target.value)}
       />
 
-      <Task task={tasks} onDelete={deleteTask} />
+      <Task task={tasks} onDelete={deleteTask} toggleTask={toggleTask} />
     </>
   );
 };

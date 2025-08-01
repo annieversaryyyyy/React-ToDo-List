@@ -9,38 +9,33 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.list-group-item {
-  background: #fff;
-  border-radius: 10px;
-  padding: 14px 20px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
-  color: #222;
-  transition: background-color 0.3s ease;
-  cursor: default;
-}
-
-.list-group-item {
-  background: #fff;
-  border-radius: 10px;
-  padding: 14px 20px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
-  color: #222;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: default;
-}
-
 .list-group-item:hover {
   background-color: #f2f7ff;
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #007bff; 
+}
+
+.task-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #999;
 }
 
 .deleteButton {
@@ -60,3 +55,18 @@
 .deleteButton:hover {
   background-color: #e04848;
 }
+
+.list-group-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  color: #222;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: default;
+}
+
