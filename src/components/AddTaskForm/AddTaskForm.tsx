@@ -1,14 +1,14 @@
-import React from "react";
 import "./AddTaskForm.css";
+import { AddTaskFormProps } from "../../types/taskItem";
 
-const AddTaskForm = (props) => {
+const AddTaskForm = ({ onAdd, task, onTextChange }: AddTaskFormProps) => {
   return (
-    <form className="taskForm" onSubmit={props.onAdd}>
+    <form className="taskForm" onSubmit={onAdd}>
       <input
         className="taskInput"
         type="text"
-        value={props.task}
-        onChange={props.onTextChange}
+        value={task}
+        onChange={onTextChange}
         placeholder="Add a new task..."
         required
       />

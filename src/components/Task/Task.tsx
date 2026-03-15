@@ -1,7 +1,7 @@
-import React from "react";
+import type { TaskProps } from "../../types/taskItem";
 import "./Task.css";
 
-const Task = ({ task, onDelete, toggleTask }) => {
+const Task = ({ task, onDelete, toggleTask }: TaskProps) => {
   return (
     <ul className="taskCard">
       {task.map((item) => (
@@ -13,7 +13,9 @@ const Task = ({ task, onDelete, toggleTask }) => {
               onChange={() => toggleTask(item.id)}
               className="custom-checkbox"
             />
-            <span className={item.completed ? "task-text completed" : "task-text"}>
+            <span
+              className={item.completed ? "task-text completed" : "task-text"}
+            >
               {item.task}
             </span>
           </div>

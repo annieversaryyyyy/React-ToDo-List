@@ -1,7 +1,7 @@
-import React from "react";
+import type { ButtonFormProps } from "../../types/taskItem";
 import "./ButtonForm.css";
 
-const ButtonForm = ({ onFilterChange, activeFilter }) => {
+const ButtonForm = ({ onFilterChange, activeFilter }: ButtonFormProps) => {
   return (
     <div className="button-group">
       <button
@@ -11,13 +11,17 @@ const ButtonForm = ({ onFilterChange, activeFilter }) => {
         All tasks
       </button>
       <button
-        className={activeFilter === "completed" ? "filter-btn active" : "filter-btn"}
+        className={
+          activeFilter === "completed" ? "filter-btn active" : "filter-btn"
+        }
         onClick={() => onFilterChange("completed")}
       >
         Completed tasks
       </button>
       <button
-        className={activeFilter === "active" ? "filter-btn active" : "filter-btn"}
+        className={
+          activeFilter === "active" ? "filter-btn active" : "filter-btn"
+        }
         onClick={() => onFilterChange("active")}
       >
         Active tasks
