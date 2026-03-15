@@ -12,7 +12,6 @@ const App = () => {
 
   const addTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     const newTaskObj: TaskItem = {
       task: newTask,
       id: crypto.randomUUID(),
@@ -22,7 +21,6 @@ const App = () => {
     const updatedTasks = [newTaskObj, ...tasks];
 
     setTasks(updatedTasks);
-    console.log(tasks);
     setNewTask("");
   };
 
